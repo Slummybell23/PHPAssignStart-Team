@@ -9,6 +9,8 @@ create table contacts(
    primary key(contactID)
 )engine=innodb;
 
+-- Random test part2
+
 insert into contacts(username,email,passwd) values('jsmith','jim.smith@gmail.com','pass1');
 insert into contacts(username,email,passwd) values('mjones','mjones@gmail.com','pass2');
 insert into contacts(username,email,passwd) values('rwilson','rick.wilson@gmail.com','12345');
