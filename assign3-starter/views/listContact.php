@@ -1,5 +1,6 @@
 <?php 
    $contacts = $_REQUEST['contacts'];
+   //Is this working?
 ?>
     <div class="container">
         <div class="col">
