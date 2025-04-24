@@ -2,6 +2,7 @@
    $contacts = $_REQUEST['contacts'];
    //Is this working?
    //Seoncd test
+   //Thomas is stupid
 ?>
     <div class="container">
         <div class="col">
