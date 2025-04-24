@@ -1,6 +1,7 @@
 <?php 
    $contacts = $_REQUEST['contacts'];
    //Is this working?
+   //Seoncd test
 ?>
     <div class="container">
         <div class="col">
