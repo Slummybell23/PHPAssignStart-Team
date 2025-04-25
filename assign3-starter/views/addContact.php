@@ -6,7 +6,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Mailing List</h5>
                         <p class="card-text">Add a new contact to the list.</p>
-                        <form action="../controller.php" method="POST">
+                        <form action="controller.php" method="POST">
                             <input type="hidden" name="page" value="add">
                             <label for="username" class="form-label">Username</label>
                             <input type="text" class="form-control mb-3" id="username" name="username" placeholder="Enter your Username" required>

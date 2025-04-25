@@ -80,14 +80,11 @@
         }
 
         function processPOST(){
-            echo "why";
             $username=$_POST['username'];
             $passwd=$_POST['passwd'];
             $contactDAO = new ContactDAO();
             $found=$contactDAO->authenticate($username,$passwd);
-            echo "afterdao";
             if($found==null){
-                echo "here";
                 $nextView="Location: controller.php?page=login";
             }else{
                 echo "there";
