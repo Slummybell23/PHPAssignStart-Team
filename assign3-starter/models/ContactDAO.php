@@ -5,7 +5,7 @@
 
 
         public function getConnection(){
-            $mysqli = new mysqli("127.0.0.1", "bloguser", "blogAssign3", "blogdb");
+            $mysqli = new mysqli("localhost", "bloguser", "blogAssign3", "blogdb");
             if ($mysqli->connect_errno) {
                 $mysqli=null;
             }
