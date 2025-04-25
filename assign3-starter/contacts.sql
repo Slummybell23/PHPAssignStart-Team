@@ -1,4 +1,4 @@
-use cs2033;
+use blogdb;
 drop table contacts;
 
 create table contacts(
