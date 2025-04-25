@@ -16,9 +16,12 @@
             session_start();
 
             //***** 1. Get Request Method and Page Variable *****/
-            $method = $_SERVER['REQUEST_METHOD'];
-            $page = $_REQUEST['page'];
-        
+            $method = $_SERVER['REQUEST_METHOD'] != ""? $_SERVER['REQUEST_METHOD'] : "GET";
+            $page = "home";
+            if (isset($_REQUEST['page'])) {
+                $page = $_REQUEST['page'];
+            }
+              
             //***** 2. Route the Request to the Controller Based on Method and Page *** */
             $controller = $this->controllers[$method.$page];
             //** 3. Check Security Access ***/
