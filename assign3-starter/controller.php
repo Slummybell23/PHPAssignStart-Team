@@ -21,7 +21,6 @@
         
             //***** 2. Route the Request to the Controller Based on Method and Page *** */
             $controller = $this->controllers[$method.$page];
-            
             //** 3. Check Security Access ***/
             $controller = $this->securityCheck($controller);
 

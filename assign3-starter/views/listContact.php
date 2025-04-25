@@ -6,7 +6,7 @@
 ?>
     <div class="container">
         <div class="col">
-            <form action="controller.php" method="GET">
+            <form action="../controller.php" method="GET">
             <button class="btn btn-primary" type="submit" name="page" value="add">Add Contact</button>
             <button class="btn btn-primary" type="submit" name="page" value="delete">Delete Contact</button>
             <table class="table table-bordered table-striped">

@@ -1,5 +1,5 @@
-use cs2033;
-drop table contacts;
+use blogdb;
+drop table if exists contacts;
 
 create table contacts(
    contactID int AUTO_INCREMENT,
