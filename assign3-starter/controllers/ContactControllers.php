@@ -130,4 +130,66 @@
         }
 
     }
+
+    class ArticleList implements ControllerAction {
+        function processGET() {
+            $articleDAO = new ArticleDAO();
+            $articles[] = $articleDAO->getArticles();
+            $_REQUEST['articles'] = $articles;
+            return "views/listArticles.php";
+        }
+        function processPOST() {
+            return;
+        }
+        function getAccess() {
+            return "PROTECTED";
+        }
+    }
+
+    class ArticleDelete implements ControllerAction {
+        function processGET() {
+            $articleID = $_GET['artID'];
+            return 'views/delArticle.php';
+        }
+        function processPOST() {
+            $articleID = $_POST['artID'];
+            $submit = $_POST['submit'];
+            if ($submit == 'CONFIRM') {
+                $articleDAO = new ArticleDAO();
+                $articleDAO->deleteArticle($articleID);
+            }
+            header("Location: controller.php?page=list");
+            exit;
+        }
+        function getAccess() {
+            return "PROTECTED";
+        }
+    }
+
+    class ArticleAdd implements ControllerAction {
+        function processGET() {
+            return "views/addArticle.php";
+        }
+        function processPOST() {
+            $authorID = $_POST['authorID'];
+            $categoryID = $_POST['categoryID'];
+            $title = $_POST['title'];
+            $image = $_POST['image'];
+            $content = $_POST['content'];
+            $article = new Article();
+            $article->setAuthorID($authorID);
+            $article->setCategoryID($categoryID);
+            $article->setTitle($title);
+            $article->setImage($image);
+            $article->setContent($content);
+            $articleDAO = new ArticleDAO();
+            $articleDAO->addArticle($article);
+            header("Location: controller.php?page=list");
+            exit;
+        }
+        function getAccess() {
+            return "PROTECTED";
+        }
+    }
+
 ?>

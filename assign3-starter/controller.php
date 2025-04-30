@@ -53,6 +53,12 @@
             $controllers["POST"."login"] = new Login();
             $controllers["GET"."home"] = new Home();
             $controllers["GET"."about"] = new About();
+            $controllers["GET"."addArticle"] = new ArticleAdd();
+            $controllers["POST"."addArticle"] = new ArticleAdd();
+            $controllers["GET"."deleteArticle"] = new ArticleDelete();
+            $controllers["POST"."deleteArticle"] = new ArticleDelete();
+            $controllers["GET"."listArticles"] = new ArticleList();
+
             return $controllers;
         }
 

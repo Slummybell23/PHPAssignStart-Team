@@ -58,5 +58,9 @@ insert into contacts(username,email,passwd) values('rwilson','rick.wilson@gmail.
 insert into contacts(username,email,passwd) values('kjohnson','kjohnson@gmail.com','password');
 insert into contacts(username,email,passwd) values('bwilliams','bwilliams@gmail.com','buddy');
 
+insert into articles(authorID,catID,title,image,content) values(123,1,'My First Article','images/article1.jpg','This is the content of my first article.');
+insert into articles(authorID,catID,title,image,content) values(456,2,'My Second Article','images/article2.jpg','This is the content of my second article.');
+
+DROP USER 'bloguser'@'localhost';
 create user 'bloguser'@'localhost' identified by 'blogAssign3';
 grant all privileges on blogdb.* to 'bloguser'@'localhost';
