@@ -2,6 +2,7 @@
     include_once "controllers/ControllerAction.php";
     include_once "controllers/ContactControllers.php";
     include_once "models/ContactDAO.php";
+    include_once "controllers/CommentControllers.php";
 
     class FrontController { 
         private $controllers;
@@ -52,6 +53,12 @@
             $controllers["POST"."login"] = new Login();
             $controllers["GET"."home"] = new Home();
             $controllers["GET"."about"] = new About();
+            $controllers["GET"."listComments"] = new CommentList();
+            $controllers["GET"."addComments"] = new CommentAdd();
+            $controllers["POST"."addComments"] = new CommentAdd();
+            $controllers["GET"."deleteComments"] = new CommentDelete();
+            $controllers["POST"."deleteComments"] = new CommentDelete();
+            
             return $controllers;
         }
 

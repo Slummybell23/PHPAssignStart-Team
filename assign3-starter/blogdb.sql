@@ -41,6 +41,9 @@ create table comments(
    primary key(comID)
 )engine=innodb;
 
+insert into comments(authorID,artID,content,lastModified) values(1, 2,'I like this art.', '4-30-2025');
+
+
 drop table contacts;
 
 create table contacts(
