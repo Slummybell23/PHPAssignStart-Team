@@ -1,5 +1,5 @@
 <?php
-    class Contact{
+    class Comment{ //fix this
         private $comID;
         private $authorID;
         private $artID;

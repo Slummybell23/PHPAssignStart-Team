@@ -32,12 +32,10 @@
             $authorID=$_POST['authorID'];
             $artID=$_POST['artID'];
             $content=$_POST['content'];
-            $lastModified=$_POST['lastModified'];
             $comment = new Comment();
             $comment->setAuthorID($authorID);
             $comment->setArtID($artID);
             $comment->setContent($content);
-            $comment->setLastModified($lastModified);
             $commentDAO = new CommentDAO();
             $commentDAO->addComment($comment);
             header("Location: controller.php?page=listComments");

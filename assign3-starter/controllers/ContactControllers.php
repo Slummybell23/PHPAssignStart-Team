@@ -76,10 +76,12 @@
     class Login implements ControllerAction{
 
         function processGET(){
+            echo "here";
             return "views/login.php";
         }
 
         function processPOST(){
+            echo "here";
             $username=$_POST['username'];
             $passwd=$_POST['passwd'];
             $contactDAO = new ContactDAO();
@@ -87,7 +89,6 @@
             if($found==null){
                 $nextView="Location: controller.php?page=login";
             }else{
-                echo "there";
                 $nextView="Location: controller.php?page=list";
                 $_SESSION['loggedin']='TRUE';
             }

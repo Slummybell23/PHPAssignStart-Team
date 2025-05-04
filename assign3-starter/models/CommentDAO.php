@@ -5,19 +5,17 @@
 
 
         public function getConnection(){
-            echo "connect";
             $mysqli = new mysqli("localhost", "bloguser", "blogAssign3", "blogdb");
             if ($mysqli->connect_errno) {
                 $mysqli=null;
             }
-            echo "after connent";
             return $mysqli;
         }
 
         public function addComment($comment){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("INSERT INTO comments (authorID, artID, content, lastModified) VALUES (?, ?, ?, ?)");
-            $stmt->bind_param("iiss", $comment->getAuthorID(), $comment->getArtID(), $comment->getContent(), $comment->getLastModified());
+            $stmt = $connection->prepare("INSERT INTO comments (authorID, artID, content) VALUES (?, ?, ?)");
+            $stmt->bind_param("iis", $comment->getAuthorID(), $comment->getArtID(), $comment->getContent());
             $stmt->execute();
             $stmt->close();
             $connection->close();
@@ -37,6 +35,7 @@
             $stmt = $connection->prepare("SELECT * FROM comments;"); 
             $stmt->execute();
             $result = $stmt->get_result();
+            $comments = null;
             while($row = $result->fetch_assoc()){
                 $comment = new Comment();
                 $comment->load($row);

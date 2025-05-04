@@ -3,13 +3,14 @@
     include_once "controllers/ContactControllers.php";
     include_once "models/ContactDAO.php";
     include_once "controllers/CommentControllers.php";
+    include_once "models/CommentDAO.php";
 
     class FrontController { 
         private $controllers;
         
 
         public function __construct(){
-            $this->showErrors(0);
+            $this->showErrors(1);
             $this->controllers = $this->loadControllers();
         }
 
