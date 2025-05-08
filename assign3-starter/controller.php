@@ -1,7 +1,9 @@
 <?php
     include_once "controllers/ControllerAction.php";
     include_once "controllers/ContactControllers.php";
+    include_once "controllers/ArticleControllers.php";
     include_once "models/ContactDAO.php";
+    include_once "models/ArticleDAO.php";
 
     class FrontController { 
         private $controllers;
@@ -53,11 +55,14 @@
             $controllers["POST"."login"] = new Login();
             $controllers["GET"."home"] = new Home();
             $controllers["GET"."about"] = new About();
+            
+            $controllers["GET"."listArticles"] = new ArticleList();
+            $controllers["POST"."listArticles"] = new ArticleList();
             $controllers["GET"."addArticle"] = new ArticleAdd();
             $controllers["POST"."addArticle"] = new ArticleAdd();
             $controllers["GET"."deleteArticle"] = new ArticleDelete();
             $controllers["POST"."deleteArticle"] = new ArticleDelete();
-            $controllers["GET"."listArticles"] = new ArticleList();
+            
 
             return $controllers;
         }

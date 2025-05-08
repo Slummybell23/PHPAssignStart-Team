@@ -12,8 +12,13 @@
   <nav class="my-2 my-md-0 me-md-3">
     <a class="p-2 text-dark" href="controller.php?page=home">Home</a>
     <a class="p-2 text-dark" href="controller.php?page=about">About</a>
+    <?php
+      if($status=="Logged In") {
+        echo "<a class=\"p-2 text-dark\" href=\"controller.php?page=listArticles\">List Articles</a>";
+      }
+    ?>
     <a class="p-2 text-dark" href="controller.php?page=list">Admin</a>
   </nav>
 
-  <a class="btn btn-outline-primary <?php echo $class; ?>" href="controller.php?page=login"><?php echo $status; ?></a>
+  <a class="btn btn-outline-primary <?php echo $class; ?>" href="../controller.php?page=login"><?php echo $status; ?></a>
 </header>
