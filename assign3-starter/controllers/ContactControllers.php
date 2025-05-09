@@ -130,4 +130,28 @@
         }
 
     }
+
+    class UsersList implements ControllerAction{
+
+        function processGET(){
+            $contactDAO = new ContactDAO();
+            $contacts = $contactDAO->getContacts();
+            $_REQUEST['contacts']=$contacts;
+            return "views/users.php";
+        }
+
+        function processPOST(){
+            return;
+        }
+
+        function getAccess(){
+            return "PROTECTED";
+        }
+
+    }
+
+
+
+
+
 ?>

@@ -53,6 +53,7 @@
             $controllers["POST"."login"] = new Login();
             $controllers["GET"."home"] = new Home();
             $controllers["GET"."about"] = new About();
+            $controllers["GET"."users"] = new UsersList();
             return $controllers;
         }
 
