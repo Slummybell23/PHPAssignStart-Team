@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Login</h5>
-                        <form action="../controller.php" method="POST">
+                        <form action="controller.php" method="POST">
                             <input type="hidden" name="page" value="login">
                             <label for="username" class="form-label">Username</label>
                             <input type="text" class="form-control mb-3" id="username" name="username" placeholder="Enter your Username" required>

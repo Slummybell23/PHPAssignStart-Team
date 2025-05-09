@@ -1,7 +1,7 @@
 <?php
-    include_once 'Contact.php';
+    include_once 'Comment.php';
 
-    class ContactDAO {
+    class CommentDAO {
 
 
         public function getConnection(){
@@ -12,39 +12,41 @@
             return $mysqli;
         }
 
-        public function addContact($contact){
+        public function addComment($comment){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("INSERT INTO contacts (username, email, passwd) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $contact->getUsername(), $contact->getEmail(), $contact->getPasswd());
+            $stmt = $connection->prepare("INSERT INTO comments (authorID, artID, content) VALUES (?, ?, ?)");
+            $stmt->bind_param("iis", $comment->getAuthorID(), $comment->getArtID(), $comment->getContent());
             $stmt->execute();
             $stmt->close();
             $connection->close();
         }
 
-        public function deleteContact($contactid){
+        public function deleteComment($comID){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("DELETE FROM contacts WHERE contactID = ?");
-            $stmt->bind_param("i", $contactid);
+            $stmt = $connection->prepare("DELETE FROM comment WHERE comID = ?");
+            $stmt->bind_param("i", $comID);
             $stmt->execute();
             $stmt->close();
             $connection->close();
         }
 
-        public function getContacts(){
+        public function getComments(){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("SELECT * FROM contacts;"); 
+            $stmt = $connection->prepare("SELECT * FROM comments;"); 
             $stmt->execute();
             $result = $stmt->get_result();
+            $comments = null;
             while($row = $result->fetch_assoc()){
-                $contact = new Contact();
-                $contact->load($row);
-                $contacts[]=$contact;
+                $comment = new Comment();
+                $comment->load($row);
+                $comments[]=$comment;
             }    
             $stmt->close();
             $connection->close();
-            return $contacts;
+            return $comments;
         }
 
+        /*
         public function authenticate($username, $passwd){
             $connection=$this->getConnection();
             $stmt = $connection->prepare("SELECT * FROM contacts WHERE username = ? and passwd = ?;");
@@ -57,6 +59,7 @@
             var_dump($found);
             return $found;
         }
+            */
 
     }
 ?>
