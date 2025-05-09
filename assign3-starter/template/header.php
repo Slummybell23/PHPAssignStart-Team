@@ -14,6 +14,7 @@
     <a class="p-2 text-dark" href="controller.php?page=about">About</a>
     <a class="p-2 text-dark" href="controller.php?page=list">Admin</a>
     <a class="p-2 text-dark" href="controller.php?page=listComments">Comments</a>
+    <a class="p-2 text-dark" href="controller.php?page=listTopics">Topics</a>
   </nav>
 
   <a class="btn btn-outline-primary <?php echo $class; ?>" href="controller.php?page=login"><?php echo $status; ?></a>

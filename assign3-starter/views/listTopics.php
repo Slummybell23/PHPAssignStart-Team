@@ -1,12 +1,12 @@
-<?php 
-/** @var Topic[] $topics */
+<?php
 $topics = $_REQUEST['topics'];
 ?>
 <div class="container">
     <div class="col">
         <form action="controller.php" method="GET">
             <button class="btn btn-primary" type="submit" name="page" value="addTopic">Add Topic</button>
-            <button class="btn btn-danger" type="submit" name="page" value="deleteTopic">Delete Topic</button>
+            <button class="btn btn-danger"  type="submit" name="page" value="deleteTopic">Delete Topic</button>
+
             <table class="table table-bordered table-striped mt-3">
                 <thead class="table-light">
                     <tr>

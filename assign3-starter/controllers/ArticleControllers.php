@@ -42,7 +42,7 @@ require_once __DIR__ . '/../models/Article.php';
                 $_REQUEST['artID'] = null;
                 $_REQUEST['title'] = null;
             }
-            return "/assign3-starter/views/delArticle.php";
+            return "views/delArticle.php";
         }
     
         public function processPOST() {    
