@@ -15,7 +15,7 @@
         //Use an Article object to add the article to the database
         public function addArticle($article){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("INSERT INTO articles (authorID, topID, title, image, content) VALUES (?, ?, ?, ?, ?)");
+            $stmt = $connection->prepare("INSERT INTO articles (authorID, artID, title, image, content) VALUES (?, ?, ?, ?, ?)");
             $stmt->bind_param("iisss", $article->getAuthorID(), $article->getTopicID(), $article->getTitle(), $article->getImage(), $article->getContent());
             $stmt->execute();
             $stmt->close();

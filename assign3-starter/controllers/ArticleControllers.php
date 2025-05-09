@@ -8,10 +8,10 @@ require_once __DIR__ . '/../models/Article.php';
             $articleDAO = new ArticleDAO();
             $articles = $articleDAO->getArticles();
             $_REQUEST['articles'] = $articles;
-            return "Location: /assign3-starter/views/listArticles.php";
+            return "views/listArticles.php";
         }        
         function processPOST() {
-            return "Location: /assign3-starter/views/listArticles.php";
+            return "views/listArticles.php";
         }
         function getAccess() {
             return "PROTECTED";
