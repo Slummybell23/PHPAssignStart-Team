@@ -13,7 +13,6 @@
 
     class FrontController { 
         private $controllers;
-        
 
         public function __construct(){
             $this->showErrors(1);
@@ -85,7 +84,7 @@
             $controllers["GET"."add"] = new UsersAdd();
             $controllers["POST"."add"] = new UsersAdd();
             $controllers["GET"."delete"] = new UsersDelete();
-            $controllers["POST"."delete"] = new Users
+            $controllers["POST"."delete"] = new Users();
 
             return $controllers;
         }
