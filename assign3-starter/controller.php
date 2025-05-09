@@ -3,6 +3,8 @@
     include_once "controllers/ContactControllers.php";
     include_once "controllers/ArticleControllers.php";
     include_once "models/ContactDAO.php";
+    include_once "controllers/CommentControllers.php";
+    include_once "models/CommentDAO.php";
     include_once "models/ArticleDAO.php";
 
     class FrontController { 
@@ -10,7 +12,7 @@
         
 
         public function __construct(){
-            $this->showErrors(0);
+            $this->showErrors(1);
             $this->controllers = $this->loadControllers();
         }
 
@@ -26,7 +28,6 @@
               
             //***** 2. Route the Request to the Controller Based on Method and Page *** */
             $controller = $this->controllers[$method.$page];
-            
             //** 3. Check Security Access ***/
             $controller = $this->securityCheck($controller);
 
@@ -55,6 +56,12 @@
             $controllers["POST"."login"] = new Login();
             $controllers["GET"."home"] = new Home();
             $controllers["GET"."about"] = new About();
+            $controllers["GET"."listComments"] = new CommentList();
+            $controllers["GET"."addComments"] = new CommentAdd();
+            $controllers["POST"."addComments"] = new CommentAdd();
+            $controllers["GET"."deleteComments"] = new CommentDelete();
+            $controllers["POST"."deleteComments"] = new CommentDelete();
+            
             
             $controllers["GET"."listArticles"] = new ArticleList();
             $controllers["POST"."listArticles"] = new ArticleList();

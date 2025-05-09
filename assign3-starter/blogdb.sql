@@ -41,6 +41,7 @@ create table comments(
    primary key(comID)
 )engine=innodb;
 
+
 drop table contacts;
 
 create table contacts(
