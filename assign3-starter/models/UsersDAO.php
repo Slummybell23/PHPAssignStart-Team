@@ -1,7 +1,7 @@
 <?php
-    include_once 'Contact.php';
+    include_once 'Users.php';
 
-    class ContactDAO {
+    class UsersDAO {
 
 
         public function getConnection(){
@@ -12,42 +12,42 @@
             return $mysqli;
         }
 
-        public function addContact($contact){
+        public function addUsers($users){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("INSERT INTO contacts (username, email, passwd) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $contact->getUsername(), $contact->getEmail(), $contact->getPasswd());
+            $stmt = $connection->prepare("INSERT INTO users (userId, username, lastname, firstname, password, email, role, lastModified) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssssss", $users->getUserID(), $users->getUsername(), $users->getLastname(), $users->getFirstname(), $users->getPassword(), $users->getEmail(), $users->getRole(), $users->getLastModified());
             $stmt->execute();
             $stmt->close();
             $connection->close();
         }
 
-        public function deleteContact($contactid){
+        public function deleteUsers($usersID){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("DELETE FROM contacts WHERE contactID = ?");
-            $stmt->bind_param("i", $contactid);
+            $stmt = $connection->prepare("DELETE FROM users WHERE usersID = ?");
+            $stmt->bind_param("i", $usersID);
             $stmt->execute();
             $stmt->close();
             $connection->close();
         }
 
-        public function getContacts(){
+        public function getUsers(){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("SELECT * FROM contacts;"); 
+            $stmt = $connection->prepare("SELECT * FROM users;"); 
             $stmt->execute();
             $result = $stmt->get_result();
             while($row = $result->fetch_assoc()){
-                $contact = new Contact();
-                $contact->load($row);
-                $contacts[]=$contact;
+                $users = new users();
+                $users->load($row);
+                $users[]=$users;
             }    
             $stmt->close();
             $connection->close();
-            return $contacts;
+            return $users;
         }
 
         public function authenticate($username, $passwd){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("SELECT * FROM contacts WHERE username = ? and passwd = ?;");
+            $stmt = $connection->prepare("SELECT * FROM contact WHERE username = ? and passwd = ?;");
             $stmt->bind_param("ss",$username,$passwd); 
             $stmt->execute();
             $result = $stmt->get_result();

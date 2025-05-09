@@ -3,6 +3,9 @@
     include_once "controllers/ContactControllers.php";
     include_once "models/ContactDAO.php";
 
+    include_once "controllers/UsersControllers.php";
+    include_once "models/UsersDAO.php";
+
     class FrontController { 
         private $controllers;
         
@@ -54,6 +57,12 @@
             $controllers["GET"."home"] = new Home();
             $controllers["GET"."about"] = new About();
             $controllers["GET"."users"] = new UsersList();
+            $controllers["GET"."add"] = new UsersAdd();
+            $controllers["POST"."add"] = new UsersAdd();
+            $controllers["GET"."delete"] = new UsersDelete();
+            $controllers["POST"."delete"] = new Users
+            Delete();
+
             return $controllers;
         }
 
