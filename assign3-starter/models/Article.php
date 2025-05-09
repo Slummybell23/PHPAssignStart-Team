@@ -15,7 +15,7 @@
         public function load(array $row) {
             $this->setArticleID($row['artID']);
             $this->setAuthorID($row['authorID']);
-            $this->setTopicID($row['topID']);
+            $this->setTopicID($row['catID']);
             $this->setTitle($row['title']);
             $this->setImage($row['image']);
             $this->setContent($row['content']);

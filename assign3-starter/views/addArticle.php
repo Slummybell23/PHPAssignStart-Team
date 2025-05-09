@@ -16,7 +16,7 @@
             <input type="text" id="authorID" name="authorID" class="form-control mb-3" placeholder="Author ID">
 
             <input type="hidden" name="image" value="Null">
-            <input type="hidden" name="topID" value="2">
+            <input type="hidden" name="catID" value="2">
 
             <div class="form-group mt-3">
                 <label for="content">Content:</label>

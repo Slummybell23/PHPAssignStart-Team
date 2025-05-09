@@ -67,7 +67,7 @@ require_once __DIR__ . '/../models/Article.php';
         }
         function processPOST() {
             $authorID = $_POST['authorID'];
-            $topicID = $_POST['topID'];
+            $topicID = $_POST['catID'];
             $title = $_POST['title'];
             $image = $_POST['image'];
             $content = $_POST['content'];

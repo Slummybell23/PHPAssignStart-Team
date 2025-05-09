@@ -6,13 +6,13 @@
         private $passwd;
 
         public function load($row){
-            $this->setTopicID($row['contactID']);
+            $this->setContactID($row['contactID']);
             $this->setName($row['username']);
             $this->setDescription($row["email"]);
             $this->setLastModified($row["passwd"]);
         }
 
-        public function setTopicID($contactID){
+        public function setContactID($contactID){
             $this->contactID=$contactID;
         }
 
