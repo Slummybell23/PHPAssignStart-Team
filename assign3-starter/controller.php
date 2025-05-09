@@ -8,6 +8,9 @@
     include_once "models/CommentDAO.php";
     include_once "models/ArticleDAO.php";
 
+    include_once "controllers/UsersControllers.php";
+    include_once "models/UsersDAO.php";
+
     class FrontController { 
         private $controllers;
         
@@ -77,6 +80,12 @@
             $controllers["POST"."addTopic"]    = new TopicAdd();
             $controllers["GET"."deleteTopic"]  = new TopicDelete();
             $controllers["POST"."deleteTopic"] = new TopicDelete();
+
+            $controllers["GET"."users"] = new UsersList();
+            $controllers["GET"."add"] = new UsersAdd();
+            $controllers["POST"."add"] = new UsersAdd();
+            $controllers["GET"."delete"] = new UsersDelete();
+            $controllers["POST"."delete"] = new Users
 
             return $controllers;
         }

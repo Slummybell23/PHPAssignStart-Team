@@ -6,6 +6,7 @@
             <form action="controller.php" method="GET">
             <button class="btn btn-primary" type="submit" name="page" value="add">Add Contact</button>
             <button class="btn btn-primary" type="submit" name="page" value="delete">Delete Contact</button>
+            <button class="btn btn-primary" type="submit" name="page" value="users">Users</button>
             <table class="table table-bordered table-striped">
                 <thead><tr><th>Contact ID</th><th>User Name</th><th>Email</th><th>Password</th></tr></thead>
                 <tbody>
