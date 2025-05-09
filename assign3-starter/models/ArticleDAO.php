@@ -63,6 +63,7 @@
             $stmt = $connection->prepare("SELECT * FROM articles;"); 
             $stmt->execute();
             $result = $stmt->get_result();
+            $articles = null;
             while($row = $result->fetch_assoc()){
                 $article = new Article();
                 $article->load($row);

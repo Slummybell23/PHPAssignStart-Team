@@ -21,10 +21,10 @@ $topics = $_REQUEST['topics'];
                 <?php foreach ($topics as $topic): ?>
                     <tr>
                         <td><input type="radio" name="topID" value="<?= $topic->getTopID() ?>"></td>
-                        <td><?= htmlspecialchars($topic->getTopID()) ?></td>
-                        <td><?= htmlspecialchars($topic->getName()) ?></td>
-                        <td><?= htmlspecialchars($topic->getDescription()) ?></td>
-                        <td><?= htmlspecialchars($topic->getLastModified()) ?></td>
+                        <td><?= $topic->getTopID() ?></td>
+                        <td><?= $topic->getName() ?></td>
+                        <td><?= $topic->getDescription() ?></td>
+                        <td><?= $topic->getLastModified() ?></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
