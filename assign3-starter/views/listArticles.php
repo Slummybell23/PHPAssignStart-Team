@@ -34,6 +34,7 @@
                 </thead>
                 <tbody>
                     <?php
+                        if($articles != null) {
                         for($index=0;$index<count($articles);$index++){
                             echo "<tr><td><input type=\"radio\" name=\"artID\" value=\"".$articles[$index]->getArticleID()."\"> ".$articles[$index]->getArticleID()."</td>";
                             echo "<td>".$articles[$index]->getTopicID()."</td>";
@@ -42,9 +43,10 @@
                             echo "<td>".$articles[$index]->getContent()."</td>";
                             echo "<td>".$articles[$index]->getLastModified()."</td></tr>";
                         }
+                        }
 
                         // If there are no articles
-                        if (count($articles) == 0) {
+                        if ($articles == null || count($articles) == 0) {
                             echo "<tr><td colspan=\"7\">No articles found</td></tr>";
                         }
                     ?>
