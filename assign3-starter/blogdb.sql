@@ -1,3 +1,4 @@
+drop database if exists blogdb;
 create database blogdb;
 use blogdb;
 
@@ -6,7 +7,7 @@ create table users(
    username varchar(30) not null, index(username),
    lastname varchar(50),
    firstname varchar(30),
-   password varchar(30),
+   psswd varchar(30),
    email varchar(255),
    role varchar(30),
    lastModified DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -19,7 +20,8 @@ create table topics(
    description varchar(255),
    lastModified DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
    primary key(topID)
-)engine=innodb;
+)engine=innodb;3
+
 
 create table articles(
    artID int AUTO_INCREMENT,
@@ -41,7 +43,7 @@ create table comments(
    primary key(comID)
 )engine=innodb;
 
-drop table contacts;
+drop table if exists contacts;
 
 create table contacts(
    contactID int AUTO_INCREMENT,
