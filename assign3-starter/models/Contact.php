@@ -6,13 +6,13 @@
         private $passwd;
 
         public function load($row){
-            $this->setContactID($row['contactID']);
-            $this->setUsername($row['username']);
-            $this->setEmail($row["email"]);
-            $this->setPasswd($row["passwd"]);
+            $this->setTopicID($row['contactID']);
+            $this->setName($row['username']);
+            $this->setDescription($row["email"]);
+            $this->setLastModified($row["passwd"]);
         }
 
-        public function setContactID($contactID){
+        public function setTopicID($contactID){
             $this->contactID=$contactID;
         }
 
@@ -20,7 +20,7 @@
             return $this->contactID;
         }
 
-        public function setUsername($username){
+        public function setName($username){
             $this->username=$username;
         }
 
@@ -28,7 +28,7 @@
             return $this->username;
         }
 
-        public function setEmail($email){
+        public function setDescription($email){
             $this->email=$email;
         }
 
@@ -36,7 +36,7 @@
             return $this->email;
         }
 
-        public function setPasswd($passwd){
+        public function setLastModified($passwd){
             $this->passwd=$passwd;
         }
 

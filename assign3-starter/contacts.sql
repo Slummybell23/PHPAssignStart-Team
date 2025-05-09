@@ -1,5 +1,5 @@
 use blogdb;
-drop table contacts;
+drop table if exists contacts;
 
 create table contacts(
    contactID int AUTO_INCREMENT,

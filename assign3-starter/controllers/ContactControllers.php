@@ -76,10 +76,12 @@
     class Login implements ControllerAction{
 
         function processGET(){
+            echo "here";
             return "views/login.php";
         }
 
         function processPOST(){
+            echo "here";
             $username=$_POST['username'];
             $passwd=$_POST['passwd'];
             $contactDAO = new ContactDAO();
