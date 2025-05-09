@@ -1,3 +1,4 @@
+drop database if exists blogdb;
 create database blogdb;
 use blogdb;
 
@@ -41,8 +42,7 @@ create table comments(
    primary key(comID)
 )engine=innodb;
 
-
-drop table contacts;
+drop table if exists contacts;
 
 create table contacts(
    contactID int AUTO_INCREMENT,
