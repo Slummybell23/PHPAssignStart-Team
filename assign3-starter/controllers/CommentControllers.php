@@ -72,22 +72,4 @@
         }
 
     }
-
-    class Article implements ControllerAction{
-
-        function processGET(){
-            return "views/listComments.php"; //merge logans
-        }
-
-        function processPOST(){
-            return;
-        }
-
-        function getAccess(){
-            return "PUBLIC";
-        }
-
-    }
-        
-
 ?>
